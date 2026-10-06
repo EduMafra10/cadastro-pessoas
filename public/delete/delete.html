@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Excluir Pessoa</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/delete/delete.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="cabecalho">
+      <a class="voltar" href="/">Voltar ao início</a>
+      <h1>Excluir Pessoa</h1>
+      <p>Busque pelo CPF e confira o cadastro antes de excluir.</p>
+    </header>
+
+    <main>
+      <form id="formulario-busca" class="formulario">
+        <div class="campo">
+          <label for="cpf">CPF — somente números</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            inputmode="numeric"
+            maxlength="11"
+            pattern="[0-9]{11}"
+            title="Digite os 11 números do CPF, sem pontos ou traço."
+            required
+          >
+        </div>
+
+        <div class="acoes">
+          <button type="submit" id="botao-buscar" class="botao">
+            Buscar pessoa
+          </button>
+        </div>
+      </form>
+
+      <p id="mensagem" class="mensagem" role="status"></p>
+
+      <section
+        id="resultados"
+        class="lista-exclusao"
+        aria-label="Cadastros encontrados"
+      ></section>
+    </main>
+  </div>
+</body>
+</html>

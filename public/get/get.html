@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Consultar Pessoas</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/get/get.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="cabecalho">
+      <a class="voltar" href="/">Voltar ao início</a>
+      <h1>Consultar Pessoas</h1>
+      <p>Veja os cadastros ou encontre uma pessoa pelo CPF.</p>
+    </header>
+
+    <main>
+      <form id="formulario-busca" class="formulario">
+        <div class="campo">
+          <label for="cpf">CPF — somente números</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            inputmode="numeric"
+            maxlength="11"
+            pattern="[0-9]{11}"
+            title="Digite os 11 números do CPF, sem pontos ou traço."
+            required
+          >
+        </div>
+
+        <div class="acoes">
+          <button type="submit" id="botao-buscar" class="botao">
+            Buscar CPF
+          </button>
+
+          <button
+            type="button"
+            id="botao-listar"
+            class="botao botao-secundario"
+          >
+            Listar todos
+          </button>
+        </div>
+      </form>
+
+      <p id="mensagem" class="mensagem" role="status"></p>
+
+      <div
+        class="area-tabela"
+        role="region"
+        aria-label="Pessoas cadastradas"
+        tabindex="0"
+      >
+        <table class="tabela">
+          <caption>Resultado da consulta</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Sobrenome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Idade</th>
+              <th scope="col">CPF</th>
+              <th scope="col">RG</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Rua</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">Cidade</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
